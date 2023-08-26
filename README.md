@@ -14,6 +14,21 @@ The state pattern is used in computer programming to encapsulate varying behavio
 https://en.wikipedia.org/wiki/State_pattern
 
 ------
+## How to run
+
+1. Clone project
+
+2. Run to install dependencies
+```npm
+npm i
+```
+
+3. Run to start Jest
+```npm
+jest
+```
+
+------
 
 ## Javascript Implementation
 
