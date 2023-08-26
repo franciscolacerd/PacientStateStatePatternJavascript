@@ -57,10 +57,10 @@ jest
     },
     states: class {
         constructor(pacient){
-            this.CheckIn = `Doing checkin to pacient ${pacient?.name ?? pacient}`;
-            this.Triage = `Doing triage to pacient ${pacient?.name ?? pacient}`;
-            this.MedicEvaluation = `Doing medic evaluation to pacient ${pacient?.name ?? pacient}`;
-            this.MedicRelease = `Doing medic release to pacient ${pacient?.name ?? pacient}`;
+            this.checkIn = `Doing checkin to pacient ${pacient?.name}`;
+            this.triage = `Doing triage to pacient ${pacient?.name}`;
+            this.medicEvaluation = `Doing medic evaluation to pacient ${pacient?.name}`;
+            this.medicRelease = `Doing medic release to pacient ${pacient?.name}`;
         }     
     }
 };
@@ -85,25 +85,25 @@ pacientsState.states = {
     checkInState: class extends pacientsState.contracts.iPacientsState {
         changeState = (pacient) => {
             const states = new pacientsState.entities.states(pacient);
-            return states.CheckIn;
+            return states.checkIn;
         };
     },
     triageState: class extends pacientsState.contracts.iPacientsState{
         changeState = (pacient) => {
             const states = new pacientsState.entities.states(pacient);
-            return states.Triage;
+            return states.triage;
         };
     },
     medicEvaluationState: class extends pacientsState.contracts.iPacientsState{
         changeState = (pacient) => {
             const states = new pacientsState.entities.states(pacient);
-            return states.MedicEvaluation;
+            return states.medicEvaluation;
         };
     },
     medicReleaseState: class extends pacientsState.contracts.iPacientsState{
         changeState = (pacient) => {
             const states = new pacientsState.entities.states(pacient);
-            return states.MedicRelease;
+            return states.medicRelease;
         };
     },
 };
@@ -121,13 +121,13 @@ module.exports = pacientsState;
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -137,20 +137,20 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
     });
 
     test('change-pacient-to-medic-evaluation', () => {
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -160,7 +160,7 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
 
         /*MedicEvaluation*/
         // Arrange  
@@ -170,20 +170,20 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicEvaluation);
+        expect(state).toBe(states.medicEvaluation);
     });
 
     test('change-pacient-to-medic-release', () => {
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -193,7 +193,7 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
 
         /*MedicEvaluation*/
         // Arrange  
@@ -203,7 +203,7 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicEvaluation);
+        expect(state).toBe(states.medicEvaluation);
 
         /*MedicRelease*/
         // Arrange  
@@ -213,7 +213,7 @@ module.exports = pacientsState;
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicRelease);
+        expect(state).toBe(states.medicRelease);
     });
 });  
 ```

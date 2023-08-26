@@ -11,13 +11,13 @@ describe('pacient state test', () => {
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -27,20 +27,20 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
     });
 
     test('change-pacient-to-medic-evaluation', () => {
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -50,7 +50,7 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
 
         /*MedicEvaluation*/
         // Arrange  
@@ -60,20 +60,20 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicEvaluation);
+        expect(state).toBe(states.medicEvaluation);
     });
 
     test('change-pacient-to-medic-release', () => {
         /*CheckIn*/
         // Arrange  
         let pacient = new pacientsState.entities.pacient('francisco lacerda', 45);
-        const states = new pacientsState.entities.states(pacient.name);
+        const states = new pacientsState.entities.states(pacient);
 
         // Act
         let state = pacient.getCurrentState();
         
         // Assert
-        expect(state).toBe(states.CheckIn);
+        expect(state).toBe(states.checkIn);
 
         /*Triage*/
         // Arrange  
@@ -83,7 +83,7 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.Triage);
+        expect(state).toBe(states.triage);
 
         /*MedicEvaluation*/
         // Arrange  
@@ -93,7 +93,7 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicEvaluation);
+        expect(state).toBe(states.medicEvaluation);
 
         /*MedicRelease*/
         // Arrange  
@@ -103,6 +103,6 @@ describe('pacient state test', () => {
         state = pacient.getCurrentState();
 
         // Assert
-        expect(state).toBe(states.MedicRelease);
+        expect(state).toBe(states.medicRelease);
     });
 }); 
