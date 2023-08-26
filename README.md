@@ -34,8 +34,6 @@ jest
 
 ### 1. Declare entities 
 
-#### Pacient
-
 ```javascript
   const pacientsState = {};
 
@@ -77,8 +75,6 @@ pacientsState.contracts = {
 ```
 
 ### 3. Declare concrete state subclasses
-
-#### CheckInState
 
 ```javascript
 pacientsState.states = {
