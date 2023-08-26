@@ -51,7 +51,7 @@ https://en.wikipedia.org/wiki/State_pattern
 };
 ```
 
-### 2. Declare the state interface
+### 2. Declare the state class
 
 ```javascript
 pacientsState.contracts = {
