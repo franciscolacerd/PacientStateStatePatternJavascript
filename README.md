@@ -64,7 +64,7 @@ jest
 };
 ```
 
-### 2. Declare the state class
+### 2. Declare the state base class
 
 ```javascript
 pacientsState.contracts = {
