@@ -107,7 +107,7 @@ pacientsState.states = {
 module.exports = pacientsState;
 ```
 
-### 4. Unit test it (NUnit)
+### 4. Unit test it (Jest)
 
 ```javascript
   const pacientsState = require('./pacientsState');
